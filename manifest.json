@@ -1,0 +1,27 @@
+﻿{
+  "name": "Git Release Note Generator",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "author": "Rick",
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://github.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "*://github.com/*"
+      ],
+      "css": [
+        "style.css"
+      ]
+    }
+  ]
+}
